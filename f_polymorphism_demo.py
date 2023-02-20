@@ -17,6 +17,7 @@ def main():
     show_mammal_info(mammal)
     show_mammal_info(dog)
     show_mammal_info(cat)
+    show_mammal_info("Zebra")
 
     # mammal.show_species()
     # mammal.make_sound()
@@ -33,9 +34,13 @@ def main():
 
 
 def show_mammal_info(creature):
-    creature.show_species()
-    creature.make_sound()
-    print()
+    if isinstance(creature, animals.Mammal):
+        creature.show_species()
+        creature.make_sound()
+        print()
+    else:
+        print(f"{creature} is not found from the mammal class")
+        print()
 
 
 # Call the main function.
